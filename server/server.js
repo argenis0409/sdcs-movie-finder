@@ -10,4 +10,26 @@ app.use(morgan('dev'));
 app.use(express.static('dist'));
 app.use(express.static('public'));
 
+
+app.get('/movieInfo/:inputValue', (req, res) => {
+  axios({
+    url: `http://www.omdbapi.com/?s=${req.params.inputValue}&apikey=${process.env.MOVIE_API_KEY}`,
+    method: 'get'
+  })
+    .then((response) => {
+      res.send(response.data);
+    });
+})
+
+
+app.get('/movie/:id', (req, res) => {
+  axios({
+    url: `http://omdbapi.com/?i=${req.params.id}&apikey=${process.env.MOVIE_API_KEY}`,
+    method: 'get'
+  })
+    .then((response) => {
+      res.send(response.data);
+    })
+})
+
 module.exports = app;
