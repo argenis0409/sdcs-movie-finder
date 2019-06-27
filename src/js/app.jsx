@@ -9,7 +9,7 @@ export default class App extends Component {
     return (
       <Router>
 
-        <div className='container text-center'>
+        <div className='container'>
           <div className='row'>
           <Route exact path='/' component={MovieSearch} />
           <Route path='/movie/:id' component={MovieDetail} />

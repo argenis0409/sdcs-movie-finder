@@ -25,47 +25,43 @@ class MovieSearch extends React.Component {
   render() {
     const { searchResults } = this.props;
     return (
-      <div className='col-md-12'>
+      <div className='container'>
+        <h1 className='text-center mt-3 mb-3'>Movie Finder</h1>
+        <div className='row'>
+          <div className='col-sm-12'>
+            <div className='input-group mb-3'>
+              <input
+                className='form-control'
+                placeholder='Type Movie You Would Like To See'
+                onChange={this.handleInput} />
 
-        <div>
-          <h1>Movie Finder</h1>
+              <button className='btn btn-outline-secondary' onClick={this.handleClick}>Go!</button>
+            </div>
+          </div>
         </div>
-
-        <div className="row">
-          <input
-            type='text'
-            className='form-control-center col-sm-10'
-            placeholder='type movie you would like to see'
-            onChange={this.handleInput} />
-
-          <button className='go col-sm-1' type='button' onClick={this.handleClick}>Go!</button>
-        </div>
-      <br />
-
-        {searchResults.map(result => (
-          <div className='card mb-3'>
-            <div className='card-body'>
-              <div className='row'>
-                <div className='col-sm-4'>
-                  <img src={result.Poster} alt='Movie Poster' />
-                </div>
-                <div className='col-sm-8'>
-                  <h3 className='card-text'>{result.Title}</h3>
-                  <h4 className='card-text'>{result.Year}</h4>
-                  <hr />
-                  <Link className='more-information' to={`/movie/${result.imdbID}`}>More Information</Link>
+        {
+          searchResults.map(result => (
+            <div className='card mb-3'>
+              <div className='card-body'>
+                <div className='row'>
+                  <div className='col-sm-4'>
+                    <img src={result.Poster} alt='Movie Poster' />
+                  </div>
+                  <div className='col-sm-8'>
+                    <h3 className='card-text'>{result.Title}</h3>
+                    <h4 className='card-text'>{result.Year}</h4>
+                    <h5 className='card-text'>{result.Type}</h5>
+                    <hr />
+                    <Link to={`/movie/${result.imdbID}`}>More Information</Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))
+          ))
         }
       </div>
-
-    )
-
+    );
   }
 }
-
 
 export default MovieSearch;
