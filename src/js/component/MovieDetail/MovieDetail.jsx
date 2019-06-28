@@ -27,8 +27,16 @@ class MovieDetail extends React.Component {
               <div className='col-sm-8'>
                 <h3 id='movie-title' className='card-text'>{movieDetails.Title}</h3>
                 <h6 className='card-text'>{movieDetails.Year}</h6>
+                <h6 className='card-text'>{movieDetails.Rated}</h6>
+                <h6 className='card-text'>{movieDetails.Released}</h6>
+                <h6 className='card-text'>{movieDetails.Runtime}</h6>
+                <h6 className='card-text'>{movieDetails.Genre}</h6>
                 <hr />
                 <p id='plot' className='card-text'>{movieDetails.Plot}</p>
+                <hr />
+                <h6 className='card-text'>{movieDetails.Language}</h6>
+                <h6 className='card-text'>{movieDetails.Country}</h6>
+                <h6 className='card-text'>{movieDetails.Awards}</h6>
                 <hr />
                 <Link className='back-to-search' to='/'>Back to Search</Link>
               </div>

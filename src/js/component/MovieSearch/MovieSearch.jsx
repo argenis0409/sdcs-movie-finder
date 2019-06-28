@@ -11,7 +11,6 @@ class MovieSearch extends React.Component {
   }
 
   handleClick() {
-
     const { inputValue, dispatch } = this.props;
     dispatch(getMovieDetails(inputValue));
   }
