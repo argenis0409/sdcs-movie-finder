@@ -25,7 +25,6 @@ class MovieSearch extends React.Component {
     const { searchResults } = this.props;
     return (
       <div className='container'>
-        <h1 className='text-center mt-3 mb-3'>Movie Finder</h1>
         <div className='row'>
           <div className='col-sm-12'>
             <div className='input-group mb-3'>

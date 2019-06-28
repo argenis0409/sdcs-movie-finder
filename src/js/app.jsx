@@ -10,6 +10,7 @@ export default class App extends Component {
       <Router>
 
         <div className='container'>
+          <h1 className='text-center mt-3 mb-3'>Movie Finder</h1>
           <div className='row'>
           <Route exact path='/' component={MovieSearch} />
           <Route path='/movie/:id' component={MovieDetail} />
