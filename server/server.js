@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 app.get('/movieInfo/:inputValue', (req, res) => {
   axios({
-    url: `http://www.omdbapi.com/?s=${req.params.inputValue}&apikey=${process.env.MOVIE_API_KEY}`,
+    url: `https://www.omdbapi.com/?s=${req.params.inputValue}&apikey=${process.env.MOVIE_API_KEY}`,
     method: 'get'
   })
     .then((response) => {
